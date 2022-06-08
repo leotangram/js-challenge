@@ -35,7 +35,7 @@ const getData = (api) => {
         `;
       });
       if (document.getElementsByTagName("article").length >= 190) {
-        output.push(`<h2>Todos los productos optenidos</h2>`);
+        output.push(`<h2>Todos los productos Obtenidos</h2>`);
       }
       let newItem = document.createElement("section");
       newItem.classList.add("Items");
