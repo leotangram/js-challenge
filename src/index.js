@@ -22,24 +22,21 @@ const getData = (api) => {
           intersectionObserver.unobserve($observe);
         }
 
-        if (id === 201) {
-          return `
-          <h2>Todos los productos optenidos</h2>
-          `;
-        }
-
         if (!images.some((image) => image.startsWith("https"))) return null;
 
         return `
         <article class="Card">
-        <img src="${images[0]}" alt="Imágen del artículo ${title}" />
-        <h2>
-        ${title}
-        <small>$ ${price}</small>
-        </h2>
+          <img src="${images[0]}" alt="Imágen del artículo ${title}" />
+          <h2>
+          ${title}
+          <small>$ ${price}</small>
+          </h2>
         </article>
         `;
       });
+      if (document.getElementsByTagName("article").length >= 190) {
+        output.push(`<h2>Todos los productos optenidos</h2>`);
+      }
       let newItem = document.createElement("section");
       newItem.classList.add("Items");
       newItem.innerHTML = output;
